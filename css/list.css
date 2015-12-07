@@ -1,0 +1,19 @@
+body {
+	text-align: center;
+}
+
+	body > ul {
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		column-count: 3;
+	}
+
+		body > ul > li {
+
+		}
+			body > ul > li img {
+				border: 2px solid transparent;
+			}
+			body > ul > li img.selected {
+				border: 2px dashed #f55;
+			}
