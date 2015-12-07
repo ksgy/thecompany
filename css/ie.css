@@ -1,0 +1,4 @@
+.ie body > ul > li {
+	width: 30%;
+	float: left;
+}
