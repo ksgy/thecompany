@@ -1,0 +1,24 @@
+<!doctypehtml>
+<html>
+	<head>
+		<script type="text/javascript">
+
+			(function(){
+
+				var th = this;
+
+				th.cb = function(data) {
+					console.log(data)
+				};
+
+				var tags='london';
+				var script=document.createElement('script');
+				script.src='http://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=cb&tags='+tags;
+				document.head.appendChild(script);
+			})();
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
