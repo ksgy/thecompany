@@ -1,0 +1,21 @@
+{
+  "name": "flickr-listing",
+  "version": "1.0.0",
+  "description": "List images from flickr",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "notyet"
+  },
+  "author": "mihaly alberti <mihaly.alberti@x-plane.hu>",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6"
+  }
+}
