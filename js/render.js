@@ -5,10 +5,26 @@ var isIE = function () {
 
 var addToggleEvent = function(element) {
 	var cl = function(e) {
-		if(this.getElementsByTagName('img')[0].className == 'selected') {
-			this.getElementsByTagName('img')[0].className = '';
+		e = e || window.event;
+		var target = e.target || e.srcElement;
+
+		var el;
+
+		if(isIE()){
+			el = target;
+			if(target.nodeName == 'LI'){
+				el = target.getElementsByTagName('img')[0];
+			} else if(target.nodeName == 'IMG') {
+				el = target;
+			}
 		} else {
-			this.getElementsByTagName('img')[0].className = 'selected';
+			el = this.getElementsByTagName('img')[0];
+		}
+
+		if(el.className == 'selected') {
+			el.className = '';
+		} else {
+			el.className = 'selected';
 		}
 	};
 	if (element.addEventListener) {
