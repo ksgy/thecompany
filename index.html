@@ -1,4 +1,4 @@
-<!doctypehtml>
+<!doctype html>
 <html>
 	<head>
 		<script type="text/javascript">
@@ -40,15 +40,31 @@
 
 			};
 
-			var render = function(data) {};
+			var render = function(data) {
+				var ul = document.createElement('ul');
+				var fragment = document.createDocumentFragment();
+
+				for (var i = 0; i < data.items.length; i++) {
+					var li = document.createElement("li");
+					var img = document.createElement("img");
+					img.src = data.items[i].media.m;
+					img.alt = data.items[i].title;
+					addToggleEvent(li);
+					li.appendChild(img);
+					fragment.appendChild(li);
+				};
+
+				ul.appendChild(fragment);
+				document.body.appendChild(ul);
+
+			};
 
 			(function(){
 
 				var th = this;
 
 				th.cb = function(data) {
-					// (isIE() < 10) ? renderIE(data) : render(data)
-					renderIE(data)
+					(isIE() < 10) ? renderIE(data) : render(data)
 				};
 
 				var tags='london';
