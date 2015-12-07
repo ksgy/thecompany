@@ -8,7 +8,37 @@
 				return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
 			}
 
-			var renderIE = function(data) {};
+			var addToggleEvent = function(element) {
+				var cl = function(e) {
+					if(this.getElementsByTagName('img')[0].className == 'selected') {
+						this.getElementsByTagName('img')[0].className = '';
+					} else {
+						this.getElementsByTagName('img')[0].className = 'selected';
+					}
+				};
+				if (element.addEventListener) {
+				    element.addEventListener("click", cl, false);
+				}
+				else {
+				    element.attachEvent("onclick", cl);
+				}
+			};
+
+			var renderIE = function(data) {
+				var ul = document.createElement('ul');
+				var lis = '';
+				for (var i = 0; i < data.items.length; i++) {
+					lis += '<li id="pic' + i + '"><img src="' + data.items[i].media.m + '" alt="'+ data.items[i].title +'"></li>';
+				};
+				ul.innerHTML = lis;
+
+				document.body.appendChild(ul);
+
+				for (var j = data.items.length - 1; j >= 0; j--) {
+					addToggleEvent(document.getElementById('pic' + j));
+				};
+
+			};
 
 			var render = function(data) {};
 
@@ -17,7 +47,8 @@
 				var th = this;
 
 				th.cb = function(data) {
-					(isIE() < 10) ? renderIE(data) : render(data)
+					// (isIE() < 10) ? renderIE(data) : render(data)
+					renderIE(data)
 				};
 
 				var tags='london';
