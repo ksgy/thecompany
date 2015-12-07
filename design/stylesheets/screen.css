@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
 /* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -61,4 +63,209 @@ a img {
 /* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
+}
+
+/* line 10, ../sass/screen.sass */
+* {
+  box-sizing: border-box;
+}
+
+/* line 14, ../sass/screen.sass */
+body {
+  padding: 0 3em 3em 3em;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+/* line 18, ../sass/screen.sass */
+a {
+  border-bottom: 1px dotted #000;
+}
+
+/* line 22, ../sass/screen.sass */
+h1 a, h2 a, h3 a, h4 a, h5 a, nav a {
+  border-bottom: 0;
+}
+
+/* line 26, ../sass/screen.sass */
+header {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 0.75em;
+}
+/* line 31, ../sass/screen.sass */
+header img {
+  float: left;
+}
+/* line 33, ../sass/screen.sass */
+header h1 {
+  float: left;
+  font-size: 3em;
+  margin-left: 0.375em;
+  font-family: "Slabo 27px", serif;
+  font-style: italic;
+}
+/* line 41, ../sass/screen.sass */
+header .share {
+  display: none;
+}
+
+/* line 44, ../sass/screen.sass */
+nav {
+  background-color: #21A6D9;
+  padding: 0.75em 1.5em;
+}
+/* line 48, ../sass/screen.sass */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 0.75em;
+}
+
+/* line 53, ../sass/screen.sass */
+article {
+  margin-top: 3em;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 57, ../sass/screen.sass */
+article aside {
+  display: none;
+}
+/* line 60, ../sass/screen.sass */
+article section {
+  float: left;
+  width: 100%;
+}
+/* line 65, ../sass/screen.sass */
+article section h1 {
+  font-size: 2em;
+}
+/* line 67, ../sass/screen.sass */
+article section h3 {
+  font-size: 1em;
+  margin: 0.375em 0;
+}
+/* line 71, ../sass/screen.sass */
+article section h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 74, ../sass/screen.sass */
+article section img {
+  width: 100%;
+}
+/* line 77, ../sass/screen.sass */
+article section .related {
+  display: none;
+  float: left;
+  margin: 0.75em 0 0 0;
+  width: 15%;
+  min-width: 200px;
+}
+/* line 84, ../sass/screen.sass */
+article section .related label {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+/* line 87, ../sass/screen.sass */
+article section .related ul {
+  margin: 0.75em 0 0 0;
+  padding-left: 1.5em;
+  list-style-type: disc;
+}
+/* line 92, ../sass/screen.sass */
+article section .related ul li {
+  margin: 0.375em 0 0 0;
+}
+/* line 94, ../sass/screen.sass */
+article section .related ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 99, ../sass/screen.sass */
+article section p {
+  margin: 1.5em 0;
+  font-size: 1.4em;
+}
+/* line 103, ../sass/screen.sass */
+article section p + .related {
+  display: block;
+}
+
+/* line 107, ../sass/screen.sass */
+footer {
+  margin: 2.25em 0 0 0;
+  background-color: #21A6D9;
+  padding: 0.75em 1.5em;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+}
+/* line 115, ../sass/screen.sass */
+footer i {
+  display: inline-block;
+  margin-right: 0.75em;
+}
+/* line 119, ../sass/screen.sass */
+footer .share {
+  display: block;
+}
+
+@media (min-width: 600px) {
+  /* line 127, ../sass/screen.sass */
+  header h1 {
+    font-size: 4em;
+  }
+  /* line 129, ../sass/screen.sass */
+  header .share {
+    display: block;
+    float: right;
+    font-size: 4em;
+  }
+
+  /* line 136, ../sass/screen.sass */
+  article aside {
+    float: right;
+    width: 30%;
+    padding-left: 1.5em;
+    display: block;
+  }
+  /* line 142, ../sass/screen.sass */
+  article aside h3 {
+    margin-top: 0.75em;
+    margin-bottom: 0.375em;
+    font-size: 2em;
+  }
+  /* line 147, ../sass/screen.sass */
+  article aside h3 a {
+    text-decoration: none;
+    color: inherit;
+  }
+  /* line 153, ../sass/screen.sass */
+  article aside h3:first-child {
+    margin-top: 0;
+  }
+  /* line 157, ../sass/screen.sass */
+  article aside p img {
+    width: 100%;
+  }
+  /* line 160, ../sass/screen.sass */
+  article section {
+    width: 70%;
+  }
+  /* line 163, ../sass/screen.sass */
+  article section .related {
+    display: block;
+    float: right;
+    margin: 2.25em 0 0.75em 0.75em;
+  }
+  /* line 169, ../sass/screen.sass */
+  article section p + .related {
+    display: none;
+  }
+
+  /* line 174, ../sass/screen.sass */
+  footer .share {
+    display: none;
+  }
 }

@@ -1,1 +1,178 @@
 @import "compass/reset"
+@import "compass/utilities/general/clearfix"
+
+@import url(https://fonts.googleapis.com/css?family=Roboto)
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px)
+
+$baseline: 0.75em
+$brandcolor: #21A6D9
+
+*
+	box-sizing: border-box
+
+
+body
+	padding: 0 $baseline * 4 $baseline * 4 $baseline * 4
+	font-family: Roboto, Arial, sans-serif
+
+a
+	border-bottom: 1px dotted #000
+
+h1,h2,h3,h4,h5,nav
+	a
+		border-bottom: 0
+
+// Mobile
+header
+	@include clearfix()
+
+	padding: $baseline
+
+	img
+		float: left
+	h1
+		float: left
+		font-size: 3em
+		margin-left: $baseline / 2
+		font-family: 'Slabo 27px', serif
+		font-style: italic
+
+
+	.share
+		display: none
+
+nav
+	background-color: $brandcolor
+	padding: $baseline $baseline * 2
+
+	a
+		color: #fff
+		text-decoration: none
+		margin-right: $baseline
+
+article
+	margin-top: $baseline * 4
+	@include clearfix()
+
+	aside
+		display: none
+
+	section
+		float: left
+		width: 100%
+
+
+		h1
+			font-size: 2em
+		h3
+			font-size: 1em
+			margin: $baseline / 2 0
+
+			a
+				text-decoration: none
+				color: inherit
+		img
+			width: 100%
+
+		.related
+			display: none
+			float: left
+			margin: $baseline 0 0 0
+			width: 15%
+			min-width: 200px
+
+			label
+				font-size: 1.6em
+				font-weight: bold
+			ul
+				margin: $baseline 0 0 0
+				padding-left: $baseline * 2
+				list-style-type: disc
+
+				li
+					margin: $baseline/2 0 0 0
+					a
+						text-decoration: none
+						color: inherit
+
+
+		p
+			margin: $baseline * 2 0
+			font-size: 1.4em
+
+			& + .related
+				display: block
+
+
+footer
+	margin: $baseline*3 0 0 0
+	background-color: $brandcolor
+	padding: $baseline $baseline*2
+	color: #fff
+	text-align: center
+	font-size: 2em
+
+	i
+		display: inline-block
+		margin-right: $baseline
+
+	.share
+		display: block
+
+
+// Desktop
+@media (min-width: 600px)
+
+	header
+		h1
+			font-size: 4em
+		.share
+			display: block
+			float: right
+			font-size: 4em
+
+	article
+
+		aside
+			float: right
+			width: 30%
+			padding-left: $baseline * 2
+			display: block
+
+			h3
+				margin-top: $baseline
+				margin-bottom: $baseline/2
+				font-size: 2em
+
+				a
+					text-decoration: none
+					color: inherit
+
+
+
+				&:first-child
+					margin-top: 0
+
+			p
+				img
+					width: 100%
+
+		section
+			width: 70%
+
+			.related
+				display: block
+				float: right
+				margin: $baseline * 3 0 $baseline $baseline
+
+			p
+				& + .related
+					display: none
+
+
+	footer
+		.share
+			display: none
+
+
+
