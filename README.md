@@ -4,5 +4,5 @@ A programming project and a design project. See project folders and per project 
 
 Live demo: 
 -  Programming: http://x-plane.hu/projects/thecompany/programming/
--  http://x-plane.hu/projects/thecompany/design/
+-  Design: http://x-plane.hu/projects/thecompany/design/
 
