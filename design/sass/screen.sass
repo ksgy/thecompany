@@ -2,21 +2,48 @@
 @import "compass/utilities/general/clearfix"
 
 @import url(https://fonts.googleapis.com/css?family=Roboto)
-@import url(https://fonts.googleapis.com/css?family=Slabo+27px)
+@import url(https://fonts.googleapis.com/css?family=Montserrat)
 
 $baseline: 0.75em
 $brandcolor: #21A6D9
+$brandcolor2: #E75F44
+$brandcolor3: #fff
+$brandcolor4: #FCB647
+
+.fa-facebook-official
+	color: #3b5998
+
+.fa-twitter-square
+	color: #55ACEE
+
+.fa-google-plus-square
+	color: #dd4b39
 
 *
 	box-sizing: border-box
+	transition: all 0.15s ease-out
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.15)
 
+::selection
+	background: #FCB647
+html
+	text-align: center
 
 body
-	padding: 0 $baseline * 4 $baseline * 4 $baseline * 4
+	padding: 0 $baseline * 2 $baseline * 2 $baseline * 2
 	font-family: Roboto, Arial, sans-serif
+	text-align: center
+	max-width: 1400px
+	margin: 0 auto
 
 a
 	border-bottom: 1px dotted #000
+
+	&:hover
+		background-color: $brandcolor2
+
+h1,h2,h3,h4,h5
+	text-transform: uppercase
 
 h1,h2,h3,h4,h5,nav
 	a
@@ -24,34 +51,64 @@ h1,h2,h3,h4,h5,nav
 
 // Mobile
 header
-	@include clearfix()
 
-	padding: $baseline
+	@include clearfix()
+	text-align: left
+	margin-top: $baseline
+
+	padding: $baseline 0
 
 	img
 		float: left
 	h1
 		float: left
-		font-size: 3em
+		font-size: 2.5em
 		margin-left: $baseline / 2
-		font-family: 'Slabo 27px', serif
-		font-style: italic
+		font-family: 'Montserrat', serif
+		text-transform: uppercase
+		letter-spacing: -5px
 
 
 	.share
 		display: none
 
-nav
+#nav
 	background-color: $brandcolor
 	padding: $baseline $baseline * 2
+	display: none
+	text-align: left
 
 	a
-		color: #fff
+		color: $brandcolor3
 		text-decoration: none
 		margin-right: $baseline
+		display: block
+		text-align: center
+		padding: $baseline / 2
+		font-size: 1.8em
+		text-transform: uppercase
+
+		&:hover
+			color: #282B2E
+
+	&:target
+		display: block
+
+		& + a
+			display: none
+
+	& + a
+		display: inline-block
+		text-align: center
+		padding: $baseline
+		background-color: $brandcolor2
+		text-decoration: none
+		color: $brandcolor3
+
 
 article
 	margin-top: $baseline * 4
+	text-align: left
 	@include clearfix()
 
 	aside
@@ -73,6 +130,7 @@ article
 				color: inherit
 		img
 			width: 100%
+			margin-top: 16px
 
 		.related
 			display: none
@@ -99,17 +157,18 @@ article
 		p
 			margin: $baseline * 2 0
 			font-size: 1.4em
+			line-height: 1.5em
 
 			& + .related
 				display: block
 
 
 footer
+
 	margin: $baseline*3 0 0 0
-	background-color: $brandcolor
+	background-color: $brandcolor4
 	padding: $baseline $baseline*2
-	color: #fff
-	text-align: center
+	color: $brandcolor3
 	font-size: 2em
 
 	i
@@ -119,9 +178,16 @@ footer
 	.share
 		display: block
 
+		a, a:hover
+			background: none
+			border-bottom: 0
+
 
 // Desktop
-@media (min-width: 600px)
+@media (min-width: 980px)
+
+	body
+		padding: 0 $baseline * 4 $baseline * 4 $baseline * 4
 
 	header
 		h1
@@ -130,6 +196,20 @@ footer
 			display: block
 			float: right
 			font-size: 4em
+
+			a, a:hover
+				background: none
+				border-bottom: 0
+
+	#nav
+		display: block
+
+		a
+			display: inline
+			font-size: 1.4em
+
+		& + a
+			display: none
 
 	article
 
